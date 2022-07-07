@@ -2,6 +2,7 @@ package com.example.retrofit_practice
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import retrofit2.*
 import retrofit2.converter.gson.GsonConverterFactory
 import java.lang.reflect.Array.get
@@ -27,10 +28,12 @@ class MainActivity_02 : AppCompatActivity() {
                 response: Response<UserListModel_02>
             ) {
                 val userList = response.body()
+                Log.d("testt", "success")
             }
 
             override fun onFailure(call: Call<UserListModel_02>, t: Throwable) {
                 call.cancel()
+                Log.d("testt", "failure")
             }
         })
     }
