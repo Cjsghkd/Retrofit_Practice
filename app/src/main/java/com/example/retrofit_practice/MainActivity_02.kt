@@ -28,12 +28,12 @@ class MainActivity_02 : AppCompatActivity() {
                 response: Response<UserListModel_02>
             ) {
                 val userList = response.body()
-                Log.d("testt", "성공")
+                Log.d("test", "성공")
             }
 
             override fun onFailure(call: Call<UserListModel_02>, t: Throwable) {
                 call.cancel()
-                Log.d("testt", "실패")
+                Log.d("test", "실패")
             }
         })
     }
