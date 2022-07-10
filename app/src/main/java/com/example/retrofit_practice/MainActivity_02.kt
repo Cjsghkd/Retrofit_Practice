@@ -27,8 +27,12 @@ class MainActivity_02 : AppCompatActivity() {
                 call: Call<UserListModel_02>,
                 response: Response<UserListModel_02>
             ) {
-                val userList = response.body()
-                Log.d("test", "성공")
+                if (response.isSuccessful) {
+                    val userList = response.body()
+                    Log.d("test", "성공")
+                } else {
+                    Log.d("test", "데이터 불러오기 실패")
+                }
             }
 
             override fun onFailure(call: Call<UserListModel_02>, t: Throwable) {
